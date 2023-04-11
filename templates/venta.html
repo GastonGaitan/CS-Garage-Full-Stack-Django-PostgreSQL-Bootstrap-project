@@ -1,0 +1,105 @@
+{% extends "plantillaPadre.html" %}
+
+{% load static %}
+
+{% block title %} Nuestros vehiculos {% endblock %}
+
+{% block titulo %} Compra de autos {% endblock %}
+{% block aclaracion %} Ingrese al link del vehiculo para contactarse con nosotros{% endblock %}
+
+{% block content %}
+
+    <style>
+        .card .img-fit {
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .card {
+            height: 100%;
+        }
+
+        .card-body {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+        }
+
+        .card-text {
+            flex-grow: 1;
+        }
+
+        .row_mobile{
+                margin-top: 60px;
+        }
+
+        .card_border{
+            margin-top: 10px;
+        }
+
+        @media only screen and (max-width: 576px) {
+            .card.card .img-fit{
+                aspect-ratio: 1.45 / 1;
+            }
+            .card{
+                margin-left: 0px;
+                margin-right: 5px;
+                margin-top: 0px;
+            }
+            .row_mobile{
+                margin-top: 0px;
+            }
+
+            .card_border{
+                margin-bottom: 50px;
+            }
+
+            .car_row{
+                margin-right: 5%;
+            }
+            
+        }
+
+        
+    </style>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 mb-3">
+            <a href="/" class="btn btn-secondary btn-block btn-lg">Volver al inicio</a>
+          </div>
+        </div>
+      </div>
+    <div class="container" style="padding-top: 20px; padding-bottom: 0px;padding-left: 50px;">
+        {% for auto in autos %}
+        {% if forloop.first %}<div class="row car_row">{% endif %}
+            <div class="col-lg-4 d-flex align-items-stretch card_border">
+                <div class="card" style="width: 18rem;display: flex; flex-direction: column;">
+                    <img src="{{ auto.image.url }}" class="card-img-top img-fit" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">{{ auto.marca }} {{ auto.modelo }} {{ auto.anio }}</h3>
+                        <h6>{{ auto.kilometros }}km</h6>
+                        <p class="card-text">{{ auto.descripcion }}</p>
+                        {% if auto.disponible == True %}
+                            <p><strong>Precio: U$S</strong> {{ auto.precio }}</p>
+                            <a href="https://wa.me/5493487239061" target="_blank" class="align-self-end btn btn-lg btn-block btn-primary" style="margin-top: auto;">Contactarse</a>
+                        {% else %}
+                            <a href="#" class="align-self-end btn btn-lg btn-block btn-primary" style="margin-top: auto; background-color: red;">No disponible</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% if forloop.counter|divisibleby:3 %}</div><div class="row row_mobile">{% endif %}
+        {% if forloop.last %}</div>{% endif %}
+        {% endfor %}
+    </div>
+    <hr style="margin-top: 0px;">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 mb-3">
+            <a href="/" class="btn btn-secondary btn-block btn-lg">Volver al inicio</a>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}

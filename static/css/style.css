@@ -1,0 +1,25 @@
+/*@font-face {
+  font-family: 'high-speed';
+  src: url("https://mywebapp-simply-static-gaston.s3.sa-east-1.amazonaws.com/fonts/High+Speed.ttf") format('truetype');
+}*/
+
+* {
+  font-family: 'high-speed', monospace;
+}
+
+p {
+  font-family: monospace;
+}
+
+.btn {
+  font-family: 'high-speed', monospace;
+}
+.navbar{
+  font-family: 'high-speed', monospace;
+}
+
+
+.nav-link{
+  font-size: 1.5rem;
+}
+

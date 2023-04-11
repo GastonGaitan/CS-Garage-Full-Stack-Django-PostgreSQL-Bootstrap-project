@@ -1,0 +1,45 @@
+{% extends "plantillaPadre.html" %}
+
+{% load static %}
+
+{% block title %} Servicios {% endblock %}
+
+{% block titulo %} Nuestros servicios {% endblock %}
+{% block aclaracion %} No dude en contactarnos por mas informacion {% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 mb-3">
+      <a href="/" class="btn btn-secondary btn-block btn-lg">Volver al inicio</a>
+    </div>
+  </div>
+</div>
+<div class="container-fluid" style="padding-right: 0px; padding-left: 0px;">
+  {% for servicio in servicios %}
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">{{ servicio.nombre }}</h1>
+      <p class="lead">{{ servicio.descripcion }}</p>
+      {% if servicio.precio == 0 %}
+        <p><strong>Desde:</strong> A coordinar.</p>
+    {% else %}
+      <p><strong>Desde: $</strong> {{ servicio.precio }} (pesos)</p>
+     
+    {% endif %}
+      <a class="btn btn-primary btn-lg" href="https://wa.me/5493487239061" target="_blank" role="button">Contarse por WhatsApp</a>
+    </div>
+  </div>
+  {% endfor %}
+  <br>
+  <hr style="margin-top: 0px;">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 mb-3">
+      <a href="/" class="btn btn-secondary btn-block btn-lg">Volver al inicio</a>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

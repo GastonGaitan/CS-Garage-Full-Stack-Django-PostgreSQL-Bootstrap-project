@@ -1,0 +1,88 @@
+{% extends "plantillaPadre.html" %}
+
+{% load static %}
+
+
+{% block title %} Inicio {% endblock %}
+
+{% block titulo %} Bienvenido a nuestra página {% endblock %}
+{% block aclaracion %} Estamos a su servicio 🚗🔧 {% endblock %}
+
+{% block content %}
+
+<div class="container button-container" style="margin-bottom: 0px;">
+  <div class="row">
+    <div class="col-md-6 col-sm-12 mb-3">
+      <a href="/serviciosVenta/venta/" class="btn btn-primary btn-block btn-lg boton">Comprar un auto</a>
+    </div>
+    <div class="col-md-6 col-sm-12 mb-3">
+      <a href="/serviciosVenta/servicios/" class="btn btn-secondary btn-block btn-lg">Nuestros servicios</a>
+    </div>
+  </div>
+</div>
+
+<section id="contact" style="margin-top: 0px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <hr class="my-4">
+        <h2>Contáctese a través de nuestras redes</h2>
+        <a href="https://www.instagram.com/cs.garagezrt/?igshid=YmMyMTA2M2Y%3D" target="_blank"><img src="{% static 'images/instagram-1-svgrepo-com.svg' %}" alt="Instagram" width="100" height="63"></a>
+        <a href="https://wa.me/5493487239061" target="_blank"><img src="{% static 'images/whatsapp-svgrepo-com.svg' %}" alt="WhatsApp" width="100" height="65"></a>
+        <a href="https://www.facebook.com/people/CS-Garage/100083321981584/?paipv=0&eav=AfaKDbJ7uhYlhmsC5mmpLXl07kbftS82xVFBNkuj8u69f44ys7zRIPHtnCiGuaPoqwQ&_rdr" target="_blank"><img src="{% static 'images\facebook-color-svgrepo-com.svg' %}" alt="Facebook" width="100" height="50"></a>
+        <br><br>
+        <h4>También puede llamarnos a nuestro número <strong>3487-239061</strong></h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="margin-top: 0px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <hr class="my-4">
+        <h5>Nos encontramos en Matheu 872, Zárate, Buenos Aires</h5>
+    </div>
+  </div>
+</section>
+
+<div class="container-fluid text-center" style="padding: 0px; margin: 0px;">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8148.095980937451!2d-59.037365545620034!3d-34.08539942122538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb0bec637816ad%3A0x5e08464e6677b95a!2sCS%20Garage!5e0!3m2!1ses-419!2sar!4v1678307532949!5m2!1ses-419!2sar" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center" id="nosotros">
+        <hr class="my-4">
+        <h2>Sobre nosotros</h2>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <br>
+        <h3>CS Garage</h3>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <br>
+        <img class="img-fluid" src= {% static 'images/311689911_138995968887802_1368186944491403834_n (1).jpg' %} alt="Your Image">
+      </div>
+      <div class="col-lg-6">
+        <p>Nos especializamos en ofrecer una amplia gama de servicios, desde reparaciones y mantenimiento preventivo hasta trabajos de chapa y pintura en vehículos de todas las marcas y modelos.<br> 
+          Además, como parte de nuestro compromiso con la satisfacción del cliente, también ofrecemos servicios de venta de vehículos usados. Nos aseguramos de que todos nuestros vehículos estén en las mejores condiciones posibles antes de ponerlos en venta y proporcionamos una garantía para brindar tranquilidad a nuestros clientes.
+          <br>
+          
+          Nuestro objetivo es brindar un servicio de alta calidad a precios razonables. Nos esforzamos por ser transparentes en nuestros precios y ofrecemos presupuestos claros antes de comenzar cualquier trabajo en su vehículo.
+          <br>
+          ¡Contáctenos hoy para programar una cita y descubrir cómo podemos ayudarlo!</p>
+      </div>
+    </div>
+  </div>
+</section>
+  {% endblock %}
+ 
